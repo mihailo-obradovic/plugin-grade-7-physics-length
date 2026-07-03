@@ -1,0 +1,314 @@
+/*
+ * All class names in this file must start with the prefix 'pl-g7-physics-length-'
+ * to guarantee scope isolation from the host page and from other plugins.
+ */
+
+.pl-g7-physics-length-root {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  color: var(--color-foreground, #111827);
+  font-family: var(--font-geist-sans, system-ui, sans-serif);
+}
+
+.pl-g7-physics-length-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.pl-g7-physics-length-title {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.pl-g7-physics-length-round-counter {
+  margin: 0;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #475569;
+}
+
+.pl-g7-physics-length-prompt {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.pl-g7-physics-length-unit-bar {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.pl-g7-physics-length-unit-button {
+  padding: 0.4rem 0.9rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #334155;
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.pl-g7-physics-length-unit-button:hover {
+  background: #f8fafc;
+}
+
+.pl-g7-physics-length-unit-button:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+
+.pl-g7-physics-length-unit-button-active {
+  background: #dbeafe;
+  border-color: #2563eb;
+  color: #1d4ed8;
+  transform: scale(1.04);
+}
+
+.pl-g7-physics-length-ruler-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.pl-g7-physics-length-ruler-viewport {
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, currentColor 12%, transparent);
+  border-radius: 0.75rem;
+  background: linear-gradient(180deg, #f8fafc 0%, #eef2ff 100%);
+  padding: 1.5rem 1rem 2.25rem;
+}
+
+.pl-g7-physics-length-ruler-track {
+  position: relative;
+  height: 4.5rem;
+  animation: pl-g7-physics-length-zoom-in 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  transform-origin: left center;
+}
+
+.pl-g7-physics-length-ruler-baseline {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 1.5rem;
+  height: 3px;
+  background: #334155;
+  border-radius: 2px;
+}
+
+.pl-g7-physics-length-tick {
+  position: absolute;
+  bottom: 1.5rem;
+  width: 1px;
+  height: 0.65rem;
+  background: #64748b;
+  transform: translateX(-50%);
+  transition:
+    height 0.35s ease,
+    background 0.35s ease;
+}
+
+.pl-g7-physics-length-tick-major {
+  height: 1.1rem;
+  background: #1e293b;
+}
+
+.pl-g7-physics-length-tick-label {
+  position: absolute;
+  top: 1.35rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #475569;
+  white-space: nowrap;
+}
+
+.pl-g7-physics-length-highlight {
+  position: absolute;
+  left: 0;
+  bottom: 1.5rem;
+  height: 0.85rem;
+  border-radius: 2px 2px 0 0;
+  transition:
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.pl-g7-physics-length-highlight-given {
+  background: color-mix(in srgb, #f59e0b 55%, transparent);
+  box-shadow: inset 0 -2px 0 #d97706;
+}
+
+.pl-g7-physics-length-highlight-correct {
+  background: color-mix(in srgb, #10b981 60%, transparent);
+  box-shadow: inset 0 -2px 0 #059669;
+}
+
+.pl-g7-physics-length-highlight-pulse {
+  animation: pl-g7-physics-length-pulse 0.7s ease;
+}
+
+.pl-g7-physics-length-given-marker {
+  position: absolute;
+  bottom: 0.35rem;
+  width: 3px;
+  height: 2.5rem;
+  background: #d97706;
+  border-radius: 2px;
+  transform: translateX(-50%);
+  transition: background 0.3s ease;
+}
+
+.pl-g7-physics-length-ruler-caption {
+  margin: 0;
+  font-size: 0.8125rem;
+  color: #64748b;
+}
+
+.pl-g7-physics-length-answer-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.pl-g7-physics-length-answer-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #334155;
+}
+
+.pl-g7-physics-length-answer-controls {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.pl-g7-physics-length-input {
+  flex: 1;
+  min-width: 10rem;
+  padding: 0.55rem 0.75rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.5rem;
+  font: inherit;
+  font-size: 1rem;
+}
+
+.pl-g7-physics-length-input:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+  border-color: #2563eb;
+}
+
+.pl-g7-physics-length-input-correct {
+  border-color: #10b981;
+  background: #ecfdf5;
+}
+
+.pl-g7-physics-length-input-shake {
+  animation: pl-g7-physics-length-shake 0.45s ease;
+  border-color: #ef4444;
+}
+
+.pl-g7-physics-length-check-button {
+  padding: 0.55rem 1.25rem;
+  border: 1px solid #1d4ed8;
+  border-radius: 0.5rem;
+  background: #2563eb;
+  color: #ffffff;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.pl-g7-physics-length-check-button:hover:not(:disabled) {
+  background: #1d4ed8;
+}
+
+.pl-g7-physics-length-check-button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.pl-g7-physics-length-check-button:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+
+.pl-g7-physics-length-feedback-wrong {
+  margin: 0;
+  font-size: 0.875rem;
+  color: #b91c1c;
+}
+
+.pl-g7-physics-length-banner {
+  padding: 0.75rem 1rem;
+  background: #ecfdf5;
+  border: 1px solid #10b981;
+  color: #065f46;
+  border-radius: 0.5rem;
+  font-weight: 500;
+}
+
+@keyframes pl-g7-physics-length-zoom-in {
+  from {
+    opacity: 0.65;
+    transform: scaleX(0.82);
+  }
+
+  to {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
+@keyframes pl-g7-physics-length-pulse {
+  0%,
+  100% {
+    filter: brightness(1);
+  }
+
+  50% {
+    filter: brightness(1.2);
+  }
+}
+
+@keyframes pl-g7-physics-length-shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  20%,
+  60% {
+    transform: translateX(-6px);
+  }
+
+  40%,
+  80% {
+    transform: translateX(6px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pl-g7-physics-length-ruler-track,
+  .pl-g7-physics-length-tick,
+  .pl-g7-physics-length-highlight,
+  .pl-g7-physics-length-unit-button,
+  .pl-g7-physics-length-input-shake,
+  .pl-g7-physics-length-highlight-pulse {
+    animation: none;
+    transition: none;
+  }
+}
