@@ -29,7 +29,7 @@
   margin: 0;
   font-size: 0.875rem;
   font-weight: 600;
-  color: #475569;
+  color: var(--color-muted-foreground, #6b5a4d);
 }
 
 .pl-g7-physics-length-prompt {
@@ -46,10 +46,10 @@
 
 .pl-g7-physics-length-unit-button {
   padding: 0.4rem 0.9rem;
-  border: 1px solid #cbd5e1;
+  border: 1px solid color-mix(in srgb, currentColor 18%, transparent);
   border-radius: 999px;
-  background: #ffffff;
-  color: #334155;
+  background: transparent;
+  color: inherit;
   font: inherit;
   font-size: 0.875rem;
   font-weight: 600;
@@ -61,18 +61,18 @@
 }
 
 .pl-g7-physics-length-unit-button:hover {
-  background: #f8fafc;
+  border-color: var(--color-primary, #f7ac4d);
 }
 
 .pl-g7-physics-length-unit-button:focus-visible {
-  outline: 2px solid #2563eb;
+  outline: 2px solid var(--color-ring, #cfa46b);
   outline-offset: 2px;
 }
 
 .pl-g7-physics-length-unit-button-active {
-  background: #dbeafe;
-  border-color: #2563eb;
-  color: #1d4ed8;
+  background: var(--color-primary, #f7ac4d);
+  border-color: var(--color-primary, #f7ac4d);
+  color: var(--color-primary-foreground, #221812);
   transform: scale(1.04);
 }
 
@@ -186,7 +186,7 @@
 .pl-g7-physics-length-answer-label {
   font-size: 0.875rem;
   font-weight: 600;
-  color: #334155;
+  color: var(--color-foreground, #221812);
 }
 
 .pl-g7-physics-length-answer-controls {
@@ -199,16 +199,16 @@
   flex: 1;
   min-width: 10rem;
   padding: 0.55rem 0.75rem;
-  border: 1px solid #cbd5e1;
+  border: 1px solid var(--color-input, #d8ccbe);
   border-radius: calc(var(--radius, 0.75rem) * 0.8);
   font: inherit;
   font-size: 1rem;
 }
 
 .pl-g7-physics-length-input:focus-visible {
-  outline: 2px solid #2563eb;
+  outline: 2px solid var(--color-ring, #cfa46b);
   outline-offset: 2px;
-  border-color: #2563eb;
+  border-color: var(--color-ring, #cfa46b);
 }
 
 .pl-g7-physics-length-input-correct {
@@ -223,17 +223,13 @@
 
 .pl-g7-physics-length-check-button {
   padding: 0.55rem 1.25rem;
-  border: 1px solid #1d4ed8;
+  border: 0;
   border-radius: calc(var(--radius, 0.75rem) * 0.8);
-  background: #2563eb;
-  color: #ffffff;
+  background: var(--color-primary, #f7ac4d);
+  color: var(--color-primary-foreground, #221812);
   font: inherit;
   font-weight: 600;
   cursor: pointer;
-}
-
-.pl-g7-physics-length-check-button:hover:not(:disabled) {
-  background: #1d4ed8;
 }
 
 .pl-g7-physics-length-check-button:disabled {
@@ -242,14 +238,14 @@
 }
 
 .pl-g7-physics-length-check-button:focus-visible {
-  outline: 2px solid #2563eb;
+  outline: 2px solid var(--color-ring, #cfa46b);
   outline-offset: 2px;
 }
 
 .pl-g7-physics-length-feedback-wrong {
   margin: 0;
   font-size: 0.875rem;
-  color: #b91c1c;
+  color: var(--color-destructive, #b91c1c);
 }
 
 .pl-g7-physics-length-banner {

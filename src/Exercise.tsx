@@ -287,7 +287,7 @@ export default function Exercise({ context }: Props) {
               onClick={handleCheck}
               disabled={feedback === 'correct' || inputValue.trim() === ''}
             >
-              Check
+              Check answer
             </button>
           </div>
 
