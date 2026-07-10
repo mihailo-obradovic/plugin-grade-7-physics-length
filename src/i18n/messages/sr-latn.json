@@ -1,0 +1,11 @@
+{
+  "title": "Uvećavajuća ravnja: pretvarač jedinica",
+  "roundCounter": "Runda {current} / {total}",
+  "convertPrompt": "Pretvori {given} {fromUnit} u {toUnit}.",
+  "rulerCaption": "Označena udaljenost: {value} {unit}",
+  "answerLabel": "Tvoj odgovor ({unit})",
+  "checkButton": "Provjeri odgovor",
+  "feedbackWrong": "Nije baš tačno — pokušaj ponovo.",
+  "completion": "Svih šest pretvaranja je tačno — možeš mijenjati skalu ravnje da vidiš kako ista udaljenost izgleda u mm, cm, m i km.",
+  "rulerScaleAria": "Skala ravnje"
+}

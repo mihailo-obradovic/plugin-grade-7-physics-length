@@ -1,5 +1,9 @@
 import { useEffect, useState } from 'react';
 
+import {
+  usePluginTranslations
+} from './i18n/usePluginTranslations';
+
 import type { KeyboardEvent } from 'react';
 import type { PluginContext } from './types';
 
@@ -118,6 +122,8 @@ type Props = {
 };
 
 export default function Exercise({ context }: Props) {
+  const t = usePluginTranslations(context.i18n);
+
   const [roundIndex, setRoundIndex] = useState(0);
   const [correctCount, setCorrectCount] = useState(0);
   const [viewUnit, setViewUnit] = useState<Unit>(ROUNDS[0].fromUnit);
@@ -190,22 +196,25 @@ export default function Exercise({ context }: Props) {
   return (
     <div className={c('root')}>
       <header className={c('header')}>
-        <h2 className={c('title')}>Zooming Ruler: Unit Converter</h2>
+        <h2 className={c('title')}>{t('title')}</h2>
 
         <p className={c('round-counter')} aria-live="polite">
-          Round {Math.min(roundIndex + 1, ROUND_COUNT)} / {ROUND_COUNT}
+          {t('roundCounter', {
+            current: Math.min(roundIndex + 1, ROUND_COUNT),
+            total: ROUND_COUNT
+          })}
         </p>
       </header>
 
       <p className={c('prompt')}>
-        Convert{' '}
-        <strong>
-          {formatUnitValue(round.given)} {round.fromUnit}
-        </strong>{' '}
-        to <strong>{round.toUnit}</strong>.
+        {t('convertPrompt', {
+          given: formatUnitValue(round.given),
+          fromUnit: round.fromUnit,
+          toUnit: round.toUnit
+        })}
       </p>
 
-      <div className={c('unit-bar')} role="group" aria-label="Ruler scale">
+      <div className={c('unit-bar')} role="group" aria-label={t('rulerScaleAria')}>
         {UNITS.map((unit) => (
           <button
             key={unit}
@@ -255,14 +264,17 @@ export default function Exercise({ context }: Props) {
         </div>
 
         <p className={c('ruler-caption')}>
-          Highlighted distance: {formatUnitValue(round.given)} {round.fromUnit}
+          {t('rulerCaption', {
+            value: formatUnitValue(round.given),
+            unit: round.fromUnit
+          })}
         </p>
       </div>
 
       {!allDone && (
         <div className={c('answer-row')}>
           <label className={c('answer-label')} htmlFor={c('answer-input')}>
-            Your answer ({round.toUnit})
+            {t('answerLabel', { unit: round.toUnit })}
           </label>
 
           <div className={c('answer-controls')}>
@@ -287,13 +299,13 @@ export default function Exercise({ context }: Props) {
               onClick={handleCheck}
               disabled={feedback === 'correct' || inputValue.trim() === ''}
             >
-              Check answer
+              {t('checkButton')}
             </button>
           </div>
 
           {feedback === 'wrong' && (
             <p className={c('feedback-wrong')} role="alert">
-              Not quite — try again.
+              {t('feedbackWrong')}
             </p>
           )}
         </div>
@@ -301,8 +313,7 @@ export default function Exercise({ context }: Props) {
 
       {allDone && (
         <div className={c('banner')} role="status">
-          All six conversions correct — you can switch ruler scales to see how the
-          same distance looks in mm, cm, m, and km.
+          {t('completion')}
         </div>
       )}
     </div>
