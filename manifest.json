@@ -1,6 +1,6 @@
 {
   "id": "grade-7.physics.length",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "capabilities": [
     "quiz",
     "progress"

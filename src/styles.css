@@ -8,7 +8,7 @@
   flex-direction: column;
   gap: 1rem;
   color: var(--color-foreground, #221812);
-  font-family: var(--font-geist-sans, system-ui, sans-serif);
+  font-family: var(--font-sans, system-ui, sans-serif);
 }
 
 .pl-g7-physics-length-header {
@@ -55,9 +55,9 @@
   font-weight: 600;
   cursor: pointer;
   transition:
-    background 0.2s ease,
-    border-color 0.2s ease,
-    transform 0.2s ease;
+    background 250ms ease,
+    border-color 250ms ease,
+    transform 250ms ease;
 }
 
 .pl-g7-physics-length-unit-button:hover {
@@ -115,8 +115,8 @@
   background: #64748b;
   transform: translateX(-50%);
   transition:
-    height 0.35s ease,
-    background 0.35s ease;
+    height 250ms ease,
+    background 250ms ease;
 }
 
 .pl-g7-physics-length-tick-major {
@@ -142,8 +142,8 @@
   height: 0.85rem;
   border-radius: 2px 2px 0 0;
   transition:
-    background 0.3s ease,
-    box-shadow 0.3s ease;
+    background 250ms ease,
+    box-shadow 250ms ease;
 }
 
 .pl-g7-physics-length-highlight-given {
@@ -168,7 +168,7 @@
   background: #d97706;
   border-radius: 2px;
   transform: translateX(-50%);
-  transition: background 0.3s ease;
+  transition: background 250ms ease;
 }
 
 .pl-g7-physics-length-ruler-caption {
