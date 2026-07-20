@@ -1,0 +1,11 @@
+{
+  "title": "Увећавајућа равња: претварач јединица",
+  "roundCounter": "Рунда {current} / {total}",
+  "convertPrompt": "Претвори {given} {fromUnit} у {toUnit}.",
+  "rulerCaption": "Означена удаљеност: {value} {unit}",
+  "answerLabel": "Твој одговор ({unit})",
+  "checkButton": "Провјери одговор",
+  "feedbackWrong": "Није баш тачно — покушај поново.",
+  "completion": "Свих шест претварања је тачно — можеш мијењати скалу равње да видиш како иста удаљеност изгледа у mm, cm, m и km.",
+  "rulerScaleAria": "Скала равње"
+}

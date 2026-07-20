@@ -1,0 +1,11 @@
+{
+  "title": "Zooming Ruler: Unit Converter",
+  "roundCounter": "Round {current} / {total}",
+  "convertPrompt": "Convert {given} {fromUnit} to {toUnit}.",
+  "rulerCaption": "Highlighted distance: {value} {unit}",
+  "answerLabel": "Your answer ({unit})",
+  "checkButton": "Check answer",
+  "feedbackWrong": "Not quite — try again.",
+  "completion": "All six conversions correct — you can switch ruler scales to see how the same distance looks in mm, cm, m, and km.",
+  "rulerScaleAria": "Ruler scale"
+}
